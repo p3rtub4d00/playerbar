@@ -1,0 +1,109 @@
+/* Variáveis de Cores e Tipografia */
+:root {
+    --bg-black: #050505;
+    --neon-green: #39FF14;
+    --green: #22C55E;
+    --cyan: #00D4FF;
+    --purple: #8A2BE2;
+    --dark-gray: #1A1A1A;
+    --white: #FFFFFF;
+    --font-main: 'Poppins', sans-serif;
+}
+
+body.bg-dark-theme {
+    background-color: var(--bg-black);
+    color: var(--white);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Tipografia e Cores Úteis */
+.text-neon { color: var(--neon-green); }
+.text-green { color: var(--green); }
+.text-cyan { color: var(--cyan); }
+.bg-purple { background-color: var(--purple); }
+
+/* Navbar Glassmorphism */
+.glass-nav {
+    background: rgba(5, 5, 5, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+.glass-nav.scrolled {
+    background: rgba(5, 5, 5, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--white);
+    font-weight: 500;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--neon-green);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, rgba(5, 5, 5, 1) 70%), url('../img/hero.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Botões Neon */
+.btn-neon {
+    background-color: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+.btn-neon:hover {
+    background-color: var(--neon-green);
+    color: var(--bg-black);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.6), 0 0 40px rgba(57, 255, 20, 0.2);
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.border-neon {
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.1) inset;
+}
+
+/* WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: 0.3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+}

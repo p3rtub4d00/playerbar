@@ -30,9 +30,10 @@ body.bg-dark-theme {
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    z-index: 1030;
 }
 .glass-nav.scrolled {
-    background: rgba(5, 5, 5, 0.9);
+    background: rgba(5, 5, 5, 0.95);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -46,17 +47,16 @@ body.bg-dark-theme {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    /* Fundo degradê combinando com as cores da logo para criar profundidade */
+    min-height: 100vh;
     background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, rgba(5, 5, 5, 1) 70%), url('../img/hero.jpg') no-repeat center center/cover;
     position: relative;
-    background-color: var(--bg-black); /* Fallback caso não tenha a imagem de fundo ainda */
+    background-color: var(--bg-black); 
 }
 
 /* Animação Flutuante para a Logo do Hero */
 .hero-logo {
     animation: float 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.4)); /* Brilho Neon sutil */
+    filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.4)); 
 }
 
 @keyframes float {
@@ -93,7 +93,7 @@ body.bg-dark-theme {
     text-transform: uppercase;
 }
 
-/* Glassmorphism Cards (Usado nos Planos) */
+/* Glassmorphism Cards */
 .glass-card {
     background: rgba(26, 26, 26, 0.4);
     backdrop-filter: blur(15px);
@@ -109,6 +109,17 @@ body.bg-dark-theme {
 .border-neon {
     border: 1px solid var(--neon-green);
     box-shadow: 0 0 15px rgba(57, 255, 20, 0.1) inset;
+}
+
+/* Efeitos para os Ícones (Como Funciona / Benefícios) */
+.icon-box i {
+    filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.4));
+    transition: 0.3s ease;
+}
+
+.step-card:hover .icon-box i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.8));
 }
 
 /* WhatsApp Flutuante */

@@ -1,4 +1,4 @@
-/* Variáveis de Cores e Tipografia */
+/* Variáveis de Cores e Tipografia baseadas na Identidade Visual PlayBar */
 :root {
     --bg-black: #050505;
     --neon-green: #39FF14;
@@ -27,6 +27,7 @@ body.bg-dark-theme {
 .glass-nav {
     background: rgba(5, 5, 5, 0.2);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
@@ -34,19 +35,34 @@ body.bg-dark-theme {
     background: rgba(5, 5, 5, 0.9);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
-.navbar-dark .navbar-nav .nav-link {
+.navbar-expand-lg .navbar-nav .nav-link {
     color: var(--white);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-expand-lg .navbar-nav .nav-link:hover {
     color: var(--neon-green);
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
+    /* Fundo degradê combinando com as cores da logo para criar profundidade */
     background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, rgba(5, 5, 5, 1) 70%), url('../img/hero.jpg') no-repeat center center/cover;
     position: relative;
+    background-color: var(--bg-black); /* Fallback caso não tenha a imagem de fundo ainda */
+}
+
+/* Animação Flutuante para a Logo do Hero */
+.hero-logo {
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(57, 255, 20, 0.4)); /* Brilho Neon sutil */
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Botões Neon */
@@ -60,6 +76,8 @@ body.bg-dark-theme {
     text-transform: uppercase;
     transition: 0.3s ease-in-out;
     box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+    text-decoration: none;
+    display: inline-block;
 }
 .btn-neon:hover {
     background-color: var(--neon-green);
@@ -67,7 +85,15 @@ body.bg-dark-theme {
     box-shadow: 0 0 20px rgba(57, 255, 20, 0.6), 0 0 40px rgba(57, 255, 20, 0.2);
 }
 
-/* Glassmorphism Cards */
+/* Botão outline glass */
+.glass-btn {
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Glassmorphism Cards (Usado nos Planos) */
 .glass-card {
     background: rgba(26, 26, 26, 0.4);
     backdrop-filter: blur(15px);
@@ -102,6 +128,7 @@ body.bg-dark-theme {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: 0.3s;
+    text-decoration: none;
 }
 .whatsapp-float:hover {
     transform: scale(1.1);
